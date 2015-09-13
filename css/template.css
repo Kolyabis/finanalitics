@@ -1,0 +1,114 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700|Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic|Roboto+Condensed:400,400italic,700,700italic|Comfortaa:400,300,700|Russo+One|Jura:400,300,500,600&subset=latin,cyrillic);
+body{
+    font-family: 'Jura', sans-serif;
+    font-weight: 400;
+}
+.clear{
+    clear:both;
+}
+.login-bar{
+    padding: 1px;
+}
+#box-menu {
+    height: 94px;
+    display: table-cell;
+    vertical-align: middle;
+    font-family: 'Comfortaa', cursive !important;
+    padding-left: 100px;
+}
+.logo{
+    width: 368px;
+    height: 94px;
+    background:url("/images/logo_ru.png") no-repeat;
+}
+.navbar-default {
+    background-color: #fff;
+    border-color: #fff;
+}
+/* Цвет пунктов навигационного меню */
+.navbar-default .navbar-nav > li > a {
+    color: #000;
+}
+/* Цвет пункта меню, при поднесении к нему курсора мышки или при его нахождении в фокусе */
+.navbar-default .navbar-nav  > li > a:hover,
+.navbar-default .navbar-nav  > li > a:focus {
+    color: #DD2A1B;
+}
+/* Цвет выпадающего меню */
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+    color: #DD2A1B;
+}
+/* Цвет активного пункта меню */
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #DD2A1B;
+    background-color: #fff;
+}
+/* Бакграунд слайдера */
+.max-width{
+    max-width: 1500px;
+    /*background: url("/images/slider-bg-tail.gif");*/
+    height: 294px;
+}
+/***************************** Style FOOTER *****************************/
+.footer-bar{
+    background: url("/images/slider-bg-tail.gif");
+    height: 294px;
+    margin-top: 15px;
+}
+.padding-block-footer{
+    padding: 15px;
+}
+.border-block-footer:hover{
+    box-shadow: 0 0 1px #D7D7D7;
+}
+/************************************************************************/
+/*************************** Style slayder ******************************/
+/********************* Изминение стилей БУТСТРАПА ***********************/
+.carousel-caption {
+    right: 20%;
+    left: 20%;
+    padding-bottom: 150px;
+}
+.carousel-caption {
+    position: absolute;
+    right: 15%;
+    bottom: 20px;
+    left: 15%;
+    z-index: 10;
+    padding-top: 20px;
+    padding-bottom: 100px;
+    color: #fff;
+    text-align: right;
+    text-shadow: 0 0px 0px rgba(0, 0, 0, .6);
+}
+.carousel-indicators li {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 1px;
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: #000 \9;
+    background-color: rgb(182, 50, 50);
+    border: 1px solid #B11E20;
+    border-radius: 10px;
+}
+/************************************************************************/
+/************************ STYLE BLOCK CONTENT ***************************/
+.block-content{
+    margin-top: 15px;
+}
+.btn-default-content {
+    color: #fff;
+    background-color: #B42022;
+    border-color: #ccc;
+    border-radius: 5px;
+}
+.btn-default-content:hover{
+    color: #C7C7C7;
+}
+/************************************************************************/
+
