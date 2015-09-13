@@ -5,7 +5,7 @@
  * Date: 12.09.2015
  * Time: 12:58
  */
-// TODO: надо наследовать и перегружать все методы работы с базой(плюс со своими)
+// TODO: РЅР°РґРѕ РЅР°СЃР»РµРґРѕРІР°С‚СЊ Рё РїРµСЂРµРіСЂСѓР¶Р°С‚СЊ РІСЃРµ РјРµС‚РѕРґС‹ СЂР°Р±РѕС‚С‹ СЃ Р±Р°Р·РѕР№(РїР»СЋСЃ СЃРѕ СЃРІРѕРёРјРё)
 class DataBaseSetting extends SystemSetting {
 	private static $_instances = array();
 	public static function getInstance($db) {
@@ -15,7 +15,7 @@ class DataBaseSetting extends SystemSetting {
 					try {
 						return self::$_instances['mysqli'] = new PDO(self::DSN_MYSQLI, self::USER_MYSQLI, self::PASSWORD_MYSQLI);
 					} catch (Exception $error) {
-						echo 'Нет подключения к mysqli';
+						echo 'РќРµС‚ РїРѕРґРєР»СЋС‡РµРЅРёСЏ Рє mysqli';
 					}
 				} else {
 					return self::$_instances['mysqli'];
@@ -26,14 +26,14 @@ class DataBaseSetting extends SystemSetting {
 					try {
 						return self::$_instances['mysql'] = new PDO(self::DSN_MYSQL, self::USER_MYSQL, self::PASSWORD_MYSQL);
 					} catch (Exception $error) {
-						echo 'Что то случилось с базой даных mysql.';
+						echo 'Р§С‚Рѕ С‚Рѕ СЃР»СѓС‡РёР»РѕСЃСЊ СЃ Р±Р°Р·РѕР№ РґР°РЅС‹С… mysql.';
 					}
 				} else {
 					return self::$_instances['mysql'];
 				}
 				break;
 			default :
-				echo 'База не поддерживается';
+				echo 'Р‘Р°Р·Р° РЅРµ РїРѕРґРґРµСЂР¶РёРІР°РµС‚СЃСЏ';
 		}
 	}
 

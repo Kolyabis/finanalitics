@@ -7,16 +7,16 @@ class indexController implements iController{
     public function __construct(){
         $this->_debug = new DebugSystem();
         $this->_fc = frontController::getInstance();
-		    //TODO: не забыть удалить после окончания теста
-	      $this->_post = array('Post_indexController', 'Post_indexAction');
+        //TODO: РЅРµ Р·Р°Р±С‹С‚СЊ СѓРґР°Р»РёС‚СЊ РїРѕСЃР»Рµ РѕРєРѕРЅС‡Р°РЅРёСЏ С‚РµСЃС‚Р°
+        $this->_post = array('Post_indexController', 'Post_indexAction');
     }
     /* ************************************************* Default Action ***********************************************/
     public function indexAction(){
-	    $this->_model = new indexModel($this->_post);
-	    $this->_debug->debug($this->_model);
-	    //$this->_debug->PhpSetting();
-      //$params = $this->_fc->getParams();
-      //$this->_fc->setBody($result);
+        $this->_model = new indexModel($this->_post);
+        $this->_debug->debug($this->_model);
+        //$this->_debug->PhpSetting();
+        //$params = $this->_fc->getParams();
+        //$this->_fc->setBody($result);
     }
     /* ****************************************************************************************************************/
 }
