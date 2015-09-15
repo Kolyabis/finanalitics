@@ -13,7 +13,7 @@ class indexView {
 		$this->_dataParams = $resultParams;
 }
 	public function GeneretedviewsTpl(){
-        $this->getHeaderTpl('default/header.php', $this->_dataParams);
+    $this->getHeaderTpl('default/header.php', $this->_dataParams);
 		$this->getBodyTpl('default/default.php', $this->_dataParams);
 		$this->getFooterTpl('default/footer.php', $this->_dataParams);
 	}

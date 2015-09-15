@@ -6,8 +6,9 @@ class indexModel{
     private  $_dbQuery;
     public $_comMenu;
     public function __construct($_post = null, $_params = null){
-        $this->_dbQuery = new DbQuery();
-        $this->_comMenu = new ComMenu();
+        //TODO: подумать как подключать вспомогательные классы
+        //$this->_dbQuery = new DbQuery();
+        //$this->_comMenu = new ComMenu();
         $this->_post = $_post;
         $this->_params = $_params;
         // TODO: работа с GET ARRAY POST

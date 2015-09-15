@@ -11,7 +11,7 @@ abstract class SystemSetting {
 	const PATH_SEPORATOR = '/';
 	const PATH_SYSTEM = 'system';
 	const PATH_LIBRARY = 'library';
-	const PATH_COMPONENTS = 'componets';
+	const PATH_COMPONENTS = 'components';
 	const PATH_MODULES = 'modules';
 	const PATH_CLASS = 'class';
 	const PATH_CONTROLLER = 'controller';
