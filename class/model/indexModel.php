@@ -18,5 +18,6 @@ class indexModel{
           //$this->_params['mainmenu'] = $this->_comMenu->get_list($this->_dbQuery->select(array("id","page"), 'mainmenu', array(), array(), 1));
           $this->_objView = new indexView($this->_post, $this->_params);
 		  $this->_objView->GeneretedviewsTpl();
+
 	  }
 }
