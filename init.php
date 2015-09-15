@@ -51,6 +51,7 @@ spl_autoload_register('autoloadClassView');
 
 function autoloadLibrary( $class_name ) {
     $file = SystemSetting::PATH_LIBRARY.SystemSetting::PATH_SEPORATOR.$class_name.SystemSetting::EXT_FILE_PHP;
+ //echo $file;
     if ( !file_exists( $file ) ) {
         return false;
     } else {
@@ -60,8 +61,9 @@ function autoloadLibrary( $class_name ) {
 spl_autoload_register('autoloadLibrary');
 
 function autoloadComponent( $class_name ) {
-    $file = __DIR__.SystemSetting::PATH_SEPORATOR.SystemSetting::PATH_COMPONENTS.SystemSetting::PATH_SEPORATOR.'com_menu'.SystemSetting::PATH_SEPORATOR.$class_name.SystemSetting::EXT_FILE_PHP;
-    if ( !file_exists( $file ) ) {
+    $file = SystemSetting::PATH_COMPONENTS.SystemSetting::PATH_SEPORATOR.'com_menu'.SystemSetting::PATH_SEPORATOR.$class_name.SystemSetting::EXT_FILE_PHP;
+  echo $file;
+	if ( !file_exists( $file ) ) {
         return false;
     } else {
         require_once( $file );

@@ -30,8 +30,12 @@ class DbQuery extends checkData {
                 }
                 $sql = substr("$sql", 0, -1);
                 $sql .= " FROM $this->_table ";
+
+
                 $result = $this->_db->query($sql);
                 $result = $result->fetchAll(PDO::FETCH_ASSOC);
+
+
                 return $result;
                 break;
             case 2 :
@@ -47,6 +51,51 @@ class DbQuery extends checkData {
                     $sql .= "$key"." = "."'$value'"." and ";
                 }
                 $sql = substr("$sql", 0, -5);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                $sql = "select ";
+
                 $result = $this->_db->query($sql);
                 return $result->fetchAll(PDO::FETCH_ASSOC);
                 break;
@@ -57,4 +106,17 @@ class DbQuery extends checkData {
         }
     }
     /*********************************************************************************** */
-} 
+}
+
+class db extends PDO {
+
+    function query($sql){
+        $sql = addcslashes($sql);
+
+        parent::query($sql);//retutrn resul
+
+
+        return fettchall;
+
+    }
+}

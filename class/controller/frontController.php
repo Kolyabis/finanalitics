@@ -7,7 +7,7 @@ class frontController{
             self::$_instance = new self();
         return self::$_instance;
     }
-    private function __construct(){
+    public function __construct(){
         $request = $_SERVER['REQUEST_URI'];
         $splits = explode('/',trim($request,'/'));
         //Выбор контроллера

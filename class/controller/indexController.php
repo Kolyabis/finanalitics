@@ -10,10 +10,14 @@ class indexController implements iController{
         $this->_params = $this->_fc->getParams();
         //TODO: не забыть удалить после окончания теста, подумать как ганять\ghjdthznm ПОСТ данные
         $this->_post = $_POST;
+        $this->_model = new indexModel($this->_post, $this->_params);
     }
     /* ************************************************* Default Action ***********************************************/
     public function indexAction(){
-        $this->_model = new indexModel($this->_post, $this->_params);
+
+    }
+    public function newsAction(){
+        $this->_model = new newsModel($this->_post, $this->_params);
     }
     /* ****************************************************************************************************************/
 }

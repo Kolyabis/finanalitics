@@ -4,10 +4,10 @@ class indexModel{
     protected $_params;
     protected $_objView;
     private  $_dbQuery;
-    private $_comMenu;
+    public $_comMenu;
     public function __construct($_post = null, $_params = null){
         $this->_dbQuery = new DbQuery();
-        //$this->_comMenu = new ComMenu();
+        $this->_comMenu = new ComMenu();
         $this->_post = $_post;
         $this->_params = $_params;
         // TODO: работа с GET ARRAY POST
