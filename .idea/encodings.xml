@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding">
+  <component name="Encoding" useUTFGuessing="false" native2AsciiForPropertiesFiles="false">
     <file url="file://$PROJECT_DIR$/.htaccess" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/class/controller/customersController.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/class/controller/iController.php" charset="UTF-8" />
@@ -14,8 +14,13 @@
     <file url="file://$PROJECT_DIR$/class/model/partnerModel.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/class/model/usefulModel.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/class/model/wrongModel.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/class/view/customersView.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/class/view/default/default.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/class/view/indexView.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/class/view/newsView.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/class/view/partnerView.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/class/view/usefulView.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/class/view/wrongView.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/index.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/js/jsStyle.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/modules/user/UserLoginRegister.php" charset="UTF-8" />
@@ -28,3 +33,4 @@
     <file url="file://$PROJECT_DIR$/system/SessionSystemSetting.php" charset="UTF-8" />
   </component>
 </project>
+

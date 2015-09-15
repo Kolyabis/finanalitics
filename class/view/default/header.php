@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Fin</title>
     <!-- Bootstrap -->
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/template.css" rel="stylesheet">
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/template.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -30,6 +30,9 @@
         </div>
     </div>
     <!-- ************************************** Top bar navigation ************************************************ -->
+    <?php
+        print_r($params);
+    ?>
     <!-- ************************************** Logo and menu ***************************************************** -->
     <div class="row">
         <div class="col-lg-4 col-md-6 col-sm-6 logo"></div>
@@ -50,7 +53,21 @@
                             <li class="dropdown">
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="/customers">Клиентам <b class="caret"></b></a>
                                 <ul class="dropdown-menu ">
-                                    <li><a href="#">Действие</a></li>
+                                    <li class="dropdown-submenu">
+                                        <a tabindex="-1" href="#">Действие</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a tabindex="-1" href="#">Second level</a></li>
+                                            <li class="dropdown-submenu">
+                                                <a href="#">Even More..</a>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="#">3rd level</a></li>
+                                                    <li><a href="#">3rd level</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="#">Second level</a></li>
+                                            <li><a href="#">Second level</a></li>
+                                        </ul>
+                                    </li>
                                     <li><a href="#">Другое действие</a></li>
                                     <li><a href="#">Что-то еще</a></li>
                                     <li class="divider"></li>

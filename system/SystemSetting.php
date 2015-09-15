@@ -10,6 +10,9 @@ abstract class SystemSetting {
 	//Main settings
 	const PATH_SEPORATOR = '/';
 	const PATH_SYSTEM = 'system';
+	const PATH_LIBRARY = 'library';
+	const PATH_COMPONENTS = 'components';
+	const PATH_MODULES = 'modules';
 	const PATH_CLASS = 'class';
 	const PATH_CONTROLLER = 'controller';
 	const PATH_MODEL = 'model';
@@ -34,25 +37,6 @@ abstract class SystemSetting {
 	const VIEWS = 4;
 	const MODERATOR = 5;
 
-	static function autoloadMain($classNameLoad = null) {
-		// TODO: ������� ����� ��������� ����� " �������� �������, DIR_ROOT � �������������� ������� "
-
-		//if (true/*file_exists()*/) {
-			//require_once(self::PATH_SEPORATOR . "system" . self::PATH_SEPORATOR . $classNameLoad . self::EXT_FILE_PHP);
-			//TODO: ����������� ���������� ������ ����. ��������� �������� ����������� �������, ��� ������ �������� �� ���������
-			//require_once(self::PATH_SEPORATOR . "class" . self::PATH_SEPORATOR . "controller" . $classNameLoad . self::EXT_FILE_PHP);
-			//require_once(self::PATH_SEPORATOR . "class" . self::PATH_SEPORATOR . "model" . $classNameLoad . self::EXT_FILE_PHP);
-			//require_once(self::PATH_SEPORATOR . "class" . self::PATH_SEPORATOR . "view" . $classNameLoad . self::EXT_FILE_PHP);
-		//} else {
-			//return null;
-		//}
-	}
-	/*static function autoloadRegisterMain() {
-		// TODO: ����������� ������� ������������ (class_exxist(), __CLASS__ etc..)
-		return spl_autoload_register('autoloadMain');
-	}*/
-
-//TODO:
 static function locale(){}
 static function getDate(){}
 static function getGlobalTemplateArr(){}

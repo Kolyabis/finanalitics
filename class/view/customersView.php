@@ -11,8 +11,10 @@ class indexView {
 	public function __construct($resultPost, $resultParams){
 		$this->_dataViews = $resultPost;
 		$this->_dataParams = $resultParams;
+		//print_r($this->_dataViews);
 }
 	public function GeneretedviewsTpl(){
+
         $this->getHeaderTpl('default/header.php', $this->_dataParams);
 		$this->getBodyTpl('default/default.php', $this->_dataParams);
 		$this->getFooterTpl('default/footer.php', $this->_dataParams);

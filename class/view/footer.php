@@ -1,3 +1,5 @@
 <?php
-	echo '<div>'.'ЭТО ФАЙЛ ФУТЕРА footer.php'.'</div>';
+$debug = new DebugSystem();
+//$debug->debug(new indexModel());
+//$debug->PhpSetting();
 

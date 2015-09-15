@@ -3,20 +3,17 @@ class indexController implements iController{
     private $_fc;
     private $_model;
     private $_post;
-    public $_debug;
+    private $_params;
     public function __construct(){
-        $this->_debug = new DebugSystem();
+        //TODO: удалить класс отладчик после завершения отладки сайта
         $this->_fc = frontController::getInstance();
-        //TODO: не забыть удалить после окончания теста
-        $this->_post = array('Post_indexController', 'Post_indexAction');
+        $this->_params = $this->_fc->getParams();
+        //TODO: не забыть удалить после окончания теста, подумать как ганять\ghjdthznm ПОСТ данные
+        $this->_post = $_POST;
     }
     /* ************************************************* Default Action ***********************************************/
     public function indexAction(){
-        $this->_model = new indexModel($this->_post);
-        $this->_debug->debug($this->_model);
-        //$this->_debug->PhpSetting();
-        //$params = $this->_fc->getParams();
-        //$this->_fc->setBody($result);
+        $this->_model = new indexModel($this->_post, $this->_params);
     }
     /* ****************************************************************************************************************/
 }
