@@ -29,6 +29,7 @@ function feedback(){
         $('.alert-danger').html(' Поле ( email ) пусто, или не корректно заполнено! ').slideDown();
         setTimeout(function() { $('.alert-danger').slideUp('slow') }, 3000);
         $('#email').focus();
+
         return valid = false;
     }
     alert(comment);
