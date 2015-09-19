@@ -1,24 +1,27 @@
 <?php
 class indexModel{
-    protected $_post;
-    protected $_params;
+    protected $_fr;
     protected $_objView;
-    private  $_dbQuery;
-    public $_comMenu;
-    public function __construct($_post = null, $_params = null){
-        //TODO: подумать как подключать вспомогательные классы
-        //$this->_dbQuery = new DbQuery();
-        //$this->_comMenu = new ComMenu();
-        $this->_post = $_post;
-        $this->_params = $_params;
-        // TODO: работа с GET ARRAY POST
-	    $this->render();
-    }
-/* Возвращает полный результат HTML для вывода на экран */
-	  public function render() {
-          //$this->_params['mainmenu'] = $this->_comMenu->get_list($this->_dbQuery->select(array("id","page"), 'mainmenu', array(), array(), 1));
-          $this->_objView = new indexView($this->_post, $this->_params);
-		  $this->_objView->GeneretedviewsTpl();
+	  protected $_dbQuery;
+	  protected $_params;
+	  protected $_lang;
+    protected $_getMenu;
+    protected $_getSession;
+    protected $_modLanguage;
 
-	  }
+    public function __construct($language){
+        //TODO: описать механизм СЕССИИ
+        $this->_getSession = new SessionSystemSetting();
+        $this->_dbQuery = new DbQuery();
+        $this->_getMenu = new ComMenu();
+        $this->_params = $this->_getMenu->getMenu($this->_dbQuery->select(array("id","page","parent_id","controller","language"), 'mainmenu', array("language"), array("$language"), 2));
+        $this->_modLanguage = new mod_language();
+        $this->_lang = $this->_modLanguage->langSwitch();
+    }
+    public function returnModelParams(){
+        return $this->_params;
+    }
+    public function returnLangParams(){
+        return $this->_lang;
+    }
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<!--<html lang="ru">-->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,15 +23,23 @@
     <div class="row login-bar">
         <div class="col-lg-8 col-md-8 col-sm-6"></div>
         <div class="col-lg-4 col-md-4 col-sm-6 center-block text-center">
-            <button type="button" class="btn btn btn-link btn-sm" >RU</button>
-            <button type="button" class="btn btn btn-link btn-sm" >UA</button>
-            <button type="button" class="btn btn btn-link btn-sm" >EN</button>
-            <button type="button" class="btn btn btn-link btn-sm" data-toggle="modal" data-target="#sendModal"><span class="glyphicon glyphicon-envelope"></span></button>
+            <?php
+                $cnt = count($params['lang']);
+                $cnt = $cnt - 1;
+                for($i = 0; $i <= $cnt; $i++){
+                    echo $params['lang'][$i];
+                }
+            ?>
+            <button type="button" class="btn btn-link btn-sm" data-toggle="modal" data-target="#sendModal"><span class="glyphicon glyphicon-envelope"></span></button>
         </div>
     </div>
     <!-- ************************************** Top bar navigation ************************************************ -->
     <?php
-        print_r($params);
+    $debug = new DebugSystem();
+    //print_r($_SERVER['REQUEST_URI']);
+    //$debug->debug($params['lang']);
+        //print_r($params);
+        //print_r($post);
     ?>
     <!-- ************************************** Logo and menu ***************************************************** -->
     <div class="row">
@@ -48,6 +56,9 @@
                         </button>
                     </div>
                     <div class="collapse navbar-collapse" id="responsive-menu">
+
+                        <?php $this->view_menu($params['mainmenu']); ?>
+
                         <ul class="nav navbar-nav">
                             <li class="active"><a href="/index">О компании</a></li>
                             <li class="dropdown">

@@ -5,15 +5,10 @@
  * Date: 15.09.15
  * Time: 16:19
  */
-
-class ComMenu {
-    public $_lib;
-    public function __construct(){
-        $this->_lib = new library();
-    }
+class ComMenu extends library  {
     /****************************** Метод формирования массива для (меню) . Рекурсия *******************/
-    public function get_list(array $list = null){
-        $this->_lib->checkArray($list);
+    public function getMenu(array $list = null){
+        $this->checkArray($list);
         $main_list = array();
         $cnt = count($list);
         if($cnt != 0){

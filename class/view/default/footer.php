@@ -41,12 +41,29 @@
                 <h4 class="modal-title" id="sendModalLabel">Обратная связь</h4>
             </div>
             <div class="modal-body">
-                ...
+
+                <form class="form-horizontal" method="post" role="form">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="email">Email:</label>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" id="email" placeholder="Введите email">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="comment">Сообщение:</label>
+                        <div class="col-sm-10">
+                            <textarea class="form-control" rows="5" id="comment" placeholder="Оставьте ваше сообщение"></textarea>
+                        </div>
+                    </div>
+                </form>
+
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
-                <button type="button" class="btn btn-primary">Отправить</button>
+                <button type="button" class="btn btn-primary" id="feedback" onclick="feedback()">Отправить</button>
             </div>
+            <div class="alert alert-success"></div>
+            <div class="alert alert-danger"></div>
         </div>
     </div>
 </div>

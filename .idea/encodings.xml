@@ -3,6 +3,7 @@
   <component name="Encoding" useUTFGuessing="false" native2AsciiForPropertiesFiles="false">
     <file url="file://$PROJECT_DIR$/.htaccess" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/class/controller/customersController.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/class/controller/frontController.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/class/controller/iController.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/class/controller/indexController.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/class/controller/newsController.php" charset="UTF-8" />
@@ -31,6 +32,6 @@
     <file url="file://$PROJECT_DIR$/system/Devoleper.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/system/LogSystemSetting.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/system/SessionSystemSetting.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/system/SystemSetting.php" charset="UTF-8" />
   </component>
 </project>
-

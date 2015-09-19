@@ -1,72 +1,24 @@
 <?php
-include 'system/SystemSetting.php';
-// TODO: подключить Develeper для вывода системных ошибо
-set_include_path(get_include_path()
-		.PATH_SEPARATOR.'components/com_menu'
-		.PATH_SEPARATOR.'library'
-		.PATH_SEPARATOR.'system'
-		.PATH_SEPARATOR.'class/controller'
-        .PATH_SEPARATOR.'class/model'
-        .PATH_SEPARATOR.'class/view');
-
-function autoloadSystem( $class_name ) {
-	$file = SystemSetting::PATH_SYSTEM.SystemSetting::PATH_SEPORATOR.$class_name.SystemSetting::EXT_FILE_PHP;
-	if ( !file_exists( $file ) ) {
-			return false;
-	} else {
-			require_once( $file );
+// TODO:
+define("HEADER_INC_TEMPLATE_PATH","/class/view/header.php");
+define("FOOTER_INC_TEMPLATE_PATH", "/class/view/footer.php");
+// TODO:разабраться с подлючением
+include 'system/systemSetting.php';
+// TODO: это слабо-динамический! (но замена той куче кода!) переделать!!!!!
+spl_autoload_register(function($className) {
+	$dirs = array(
+		'System' => SystemSetting::PATH_SYSTEM.SystemSetting::DS,
+		'Controller' => SystemSetting::PATH_CLASS_ROOT.SystemSetting::DS.SystemSetting::PATH_CONTROLLER.SystemSetting::DS,
+		'Model' => SystemSetting::PATH_CLASS_ROOT.SystemSetting::DS.SystemSetting::PATH_MODEL.SystemSetting::DS,
+		'View' => SystemSetting::PATH_CLASS_ROOT.SystemSetting::DS.SystemSetting::PATH_VIEW.SystemSetting::DS,
+		'library' => SystemSetting::PATH_LIBRARY.SystemSetting::DS,
+		// TODO: нужен многомерній массив
+		'components' => SystemSetting::PATH_COMPONENTS.SystemSetting::DS.'com_menu'.SystemSetting::DS,
+		'modules' => SystemSetting::PATH_MODULES.SystemSetting::DS.'language'.SystemSetting::DS,
+	);
+	foreach( $dirs as $mode => $pathRoot ) {
+		if (file_exists($pathRoot.$className.SystemSetting::EXT_FILE_PHP)) {
+			require_once($pathRoot.$className.SystemSetting::EXT_FILE_PHP);
+		}
 	}
-}
-spl_autoload_register('autoloadSystem');
-
-function autoloadClassController( $class_name ) {
-	$file = __DIR__.SystemSetting::PATH_SEPORATOR.SystemSetting::PATH_CLASS.SystemSetting::PATH_SEPORATOR.SystemSetting::PATH_CONTROLLER.SystemSetting::PATH_SEPORATOR.$class_name.SystemSetting::EXT_FILE_PHP;
-	if(!file_exists($file)){
-			return false;
-	}else{
-			require_once( $file );
-	}
-}
-spl_autoload_register('autoloadClassController');
-
-function autoloadClassModel( $class_name ) {
-	$file = __DIR__.SystemSetting::PATH_SEPORATOR.SystemSetting::PATH_CLASS.SystemSetting::PATH_SEPORATOR.SystemSetting::PATH_MODEL.SystemSetting::PATH_SEPORATOR.$class_name.SystemSetting::EXT_FILE_PHP;
-	if(!file_exists($file)){
-			return false;
-	}else{
-			require_once( $file );
-	}
-}
-spl_autoload_register('autoloadClassModel');
-
-function autoloadClassView( $class_name ) {
-	$file = __DIR__.SystemSetting::PATH_SEPORATOR.SystemSetting::PATH_CLASS.SystemSetting::PATH_SEPORATOR.SystemSetting::PATH_VIEW.SystemSetting::PATH_SEPORATOR.$class_name.SystemSetting::EXT_FILE_PHP;
-	if(!file_exists($file)){
-			return false;
-	}else{
-		require_once( $file );
-	}
-}
-spl_autoload_register('autoloadClassView');
-
-function autoloadLibrary( $class_name ) {
-    $file = SystemSetting::PATH_LIBRARY.SystemSetting::PATH_SEPORATOR.$class_name.SystemSetting::EXT_FILE_PHP;
- //echo $file;
-    if ( !file_exists( $file ) ) {
-        return false;
-    } else {
-        require_once( $file );
-    }
-}
-spl_autoload_register('autoloadLibrary');
-
-function autoloadComponent( $class_name ) {
-    $file = SystemSetting::PATH_COMPONENTS.SystemSetting::PATH_SEPORATOR.'com_menu'.SystemSetting::PATH_SEPORATOR.$class_name.SystemSetting::EXT_FILE_PHP;
-  echo $file;
-	if ( !file_exists( $file ) ) {
-        return false;
-    } else {
-        require_once( $file );
-    }
-}
-spl_autoload_register('autoloadComponent');
+});

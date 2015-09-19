@@ -7,7 +7,6 @@
  * Time: 11:54
  */
 class SessionSystemSetting {
-
 	/**
 	 * SessionSystemSetting constructor.
 	 */

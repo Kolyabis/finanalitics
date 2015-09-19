@@ -148,6 +148,12 @@ body{
     border-radius: 10px;
 }
 /************************************************************************/
+.alert{
+    text-align: center;
+    margin: 10px 15px 10px 15px;
+    display: none;
+}
+
 /************************ STYLE BLOCK CONTENT ***************************/
 .block-content{
     margin-top: 15px;
