@@ -39,8 +39,6 @@ class indexController implements iController{
         $this->_viewObject = new indexView(/*$this->_POST,*/ $this->_params);
         $this->_viewObject->GeneretedviewsTpl();
     }
-
-
     public function mailsendAction(){
         if($this->_POST != null){
             $this->_mailObj = new mod_feedback($this->_POST);
