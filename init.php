@@ -14,7 +14,8 @@ spl_autoload_register(function($className) {
 		'library' => SystemSetting::PATH_LIBRARY.SystemSetting::DS,
 		// TODO: нужен многомерній массив
 		'components' => SystemSetting::PATH_COMPONENTS.SystemSetting::DS.'com_menu'.SystemSetting::DS,
-		'modules' => SystemSetting::PATH_MODULES.SystemSetting::DS.'language'.SystemSetting::DS,
+		'language' => SystemSetting::PATH_MODULES.SystemSetting::DS.'language'.SystemSetting::DS,
+		'feedback' => SystemSetting::PATH_MODULES.SystemSetting::DS.'feedback'.SystemSetting::DS,
 	);
 	foreach( $dirs as $mode => $pathRoot ) {
 		if (file_exists($pathRoot.$className.SystemSetting::EXT_FILE_PHP)) {

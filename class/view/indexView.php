@@ -6,10 +6,10 @@
  * Time: 13:54
  */
 class indexView {
-	protected $_dataViews;
+	/*protected $_dataViews;*/
 	protected $_dataParams;
-	public function __construct($resultPost, $resultParams =  null){
-        $this->_dataViews = $resultPost;
+	public function __construct(/*$resultPost,*/ $resultParams =  null){
+        /*$this->_dataViews = $resultPost;*/
 		    $this->_dataParams = $resultParams;
   }
 
@@ -39,21 +39,21 @@ class indexView {
 
 
     public function GeneretedviewsTpl(){
-	      $this->getHeaderTpl('default/header.php', $this->_dataViews, $this->_dataParams);
-		    $this->getBodyTpl('default/default.php', $this->_dataViews, $this->_dataParams);
-		    $this->getFooterTpl('default/footer.php', $this->_dataViews, $this->_dataParams);
+	      $this->getHeaderTpl('default/header.php', /*$this->_dataViews,*/ $this->_dataParams);
+		    $this->getBodyTpl('default/default.php', /*$this->_dataViews,*/ $this->_dataParams);
+		    $this->getFooterTpl('default/footer.php', /*$this->_dataViews,*/ $this->_dataParams);
 	  }
 
 	/*** @param $header */
-	public function getHeaderTpl($header , $post = null, $params = null) {
+	public function getHeaderTpl($header , /*$post = null,*/ $params = null) {
 		 include(__DIR__ . '/' . $header);
 	}
 	/*** @param $body */
-	public function getBodyTpl($body , $post = null, $params = null) {
+	public function getBodyTpl($body , /*$post = null,*/ $params = null) {
 		 include(__DIR__ . '/' . $body);
 	}
 	/*** @param $footer */
-	public function getFooterTpl($footer , $post = null, $params = null) {
+	public function getFooterTpl($footer , /*$post = null,*/ $params = null) {
 		 include (__DIR__ . '/' . $footer);
 	}
 }

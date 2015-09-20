@@ -46,13 +46,13 @@
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="email">Email:</label>
                         <div class="col-sm-10">
-                            <input type="email" class="form-control" id="email" placeholder="Введите email">
+                            <input type="email" name="mail" class="form-control" id="email" placeholder="Введите email">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="comment">Сообщение:</label>
                         <div class="col-sm-10">
-                            <textarea class="form-control" rows="5" id="comment" placeholder="Оставьте ваше сообщение"></textarea>
+                            <textarea class="form-control" name="comment" rows="5" id="comment" placeholder="Оставьте ваше сообщение"></textarea>
                         </div>
                     </div>
                 </form>
@@ -69,8 +69,9 @@
 </div>
 <!-- ************************************** Modal send mail *************************************************** -->
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>-->
 <!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/js/jquery/jquery-1.11.3.js"></script>
 <script src="/js/bootstrap.js"></script>
 <script src="/js/jsStyle.js"></script>
 </body>

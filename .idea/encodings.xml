@@ -24,6 +24,7 @@
     <file url="file://$PROJECT_DIR$/class/view/wrongView.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/index.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/js/jsStyle.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/modules/feedback/mod_feedback.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/modules/user/UserLoginRegister.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/modules/user/UserLoginRegisterChecker.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/modules/user/UserLoginRegisterView.php" charset="UTF-8" />

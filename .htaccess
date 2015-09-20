@@ -2,4 +2,5 @@ RewriteEngine on
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule !\.(js|gif|png|jpg|css)$ index.php
+#RewriteRule ^(.*)$ /ru [L,R=301]
 AddDefaultCharset UTF-8

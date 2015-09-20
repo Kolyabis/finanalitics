@@ -60,7 +60,7 @@
                         <?php $this->view_menu($params['mainmenu']); ?>
 
                         <ul class="nav navbar-nav">
-                            <li class="active"><a href="/index">О компании</a></li>
+                            <li class="active"><a href="ru/index">О компании</a></li>
                             <li class="dropdown">
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="/customers">Клиентам <b class="caret"></b></a>
                                 <ul class="dropdown-menu ">
