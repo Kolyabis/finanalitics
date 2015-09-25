@@ -8,7 +8,7 @@ class frontController implements iController {
     protected $_controllerString = self::DEFAULT_CONTROLLER;
     protected $_actionString = self::DEFAULT_ACTION;
     protected $_controllerObject = null;
-    protected $_params = array();
+    protected  $_params = array();
     private $_uri;
 
     protected $_options = array();
@@ -60,9 +60,9 @@ class frontController implements iController {
     //TODO: врубаю код тапором, чтоб заработало, потом поменяем
     public function setLanguage(){
         if(!empty($this->_uri[0]) && $this->_uri[0] == 'ru' || $this->_uri[0] == 'en' || $this->_uri[0] == 'ua'){
-            $this->_language = $this->_uri[0];
+            return $this->_language = $this->_uri[0];
         }else{
-            $this->_language = self::DEFAULT_LANGUAGE;
+            return $this->_language = self::DEFAULT_LANGUAGE;
         }
     }
 
@@ -115,11 +115,17 @@ class frontController implements iController {
 
     protected function getUri() {
         if (!empty($_SERVER['REQUEST_URI'])) {
-            return trim ('/'.$this->_language.$_SERVER['REQUEST_URI'], '/');
+            return trim ('/'.$_SERVER['REQUEST_URI'], '/');
         }
     }
 
     public function getController() {
        return ($this->_controllerObject);
     }
+    /*function getBody(){
+        return $this->_body;
+    }
+    function setBody($body){
+        $this->_body = $body;
+    }*/
 }

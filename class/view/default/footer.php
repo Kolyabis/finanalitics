@@ -60,13 +60,20 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
-                <button type="button" class="btn btn-primary" id="feedback" onclick="feedback()">Отправить</button>
+                <button type="button" class="btn btn-primary" id="feedback" onclick="feedback('<?php echo $params['default_lang']; ?>')">Отправить</button>
             </div>
             <div class="alert alert-success"></div>
             <div class="alert alert-danger"></div>
         </div>
     </div>
 </div>
+<?php
+$debug = new DebugSystem();
+//print_r($_SERVER['REQUEST_URI']);
+$debug->debug($params);
+//print_r($params['lang']);
+//print_r($option);
+?>
 <!-- ************************************** Modal send mail *************************************************** -->
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>-->

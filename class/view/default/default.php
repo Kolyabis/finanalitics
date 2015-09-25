@@ -5,14 +5,9 @@
             bews
         </div>
         <div class="col-lg-8 col-md-8 col-sm-8">
-            fjskdfhskdhfksdhfksdjfhksdhfksjdfhksjdfhskjdfhksjfh sdfsdfsdf sfsfsdf<br>
-            fjskdfhskdhfksdhfksdjfhksdhfksjdfhksjdfhskjdfhksjfh sdfsdfsdf sfsfsdf<br>
-            fjskdfhskdhfksdhfksdjfhksdhfksjdfhksjdfhskjdfhksjfh sdfsdfsdf sfsfsdf<br>
-            fjskdfhskdhfksdhfksdjfhksdhfksjdfhksjdfhskjdfhksjfh sdfsdfsdf sfsfsdf<br>
-            fjskdfhskdhfksdhfksdjfhksdhfksjdfhksjdfhskjdfhksjfh sdfsdfsdf sfsfsdf<br>
-            fjskdfhskdhfksdhfksdjfhksdhfksjdfhksjdfhskjdfhksjfh sdfsdfsdf sfsfsdf<br>
-            fjskdfhskdhfksdhfksdjfhksdhfksjdfhksjdfhskjdfhksjfh sdfsdfsdf sfsfsdf<br>
-            fjskdfhskdhfksdhfksdjfhksdhfksjdfhksjdfhskjdfhksjfh sdfsdfsdf sfsfsdf<br>
+            <?php
+                print_r($params['body'][0]['description']);
+            ?>
         </div>
     </div>
 </div>

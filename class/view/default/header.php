@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!--<html lang="ru">-->
+<html lang="<?php echo $lang = $params['default_lang']; ?>">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -31,16 +31,10 @@
                 }
             ?>
             <button type="button" class="btn btn-link btn-sm" data-toggle="modal" data-target="#sendModal"><span class="glyphicon glyphicon-envelope"></span></button>
+            <button type="button" class="btn btn-link btn-sm" data-toggle="modal" data-target="#loginModal"><span class="glyphicon glyphicon-envelope"></span></button>
         </div>
     </div>
     <!-- ************************************** Top bar navigation ************************************************ -->
-    <?php
-    $debug = new DebugSystem();
-    //print_r($_SERVER['REQUEST_URI']);
-    //$debug->debug($params['lang']);
-        //print_r($params);
-        //print_r($post);
-    ?>
     <!-- ************************************** Logo and menu ***************************************************** -->
     <div class="row">
         <div class="col-lg-4 col-md-6 col-sm-6 logo"></div>
@@ -56,10 +50,24 @@
                         </button>
                     </div>
                     <div class="collapse navbar-collapse" id="responsive-menu">
+                        <?php
+                            function view_menu($arr, $parent_id = 0){
+                                if(empty($arr[$parent_id])){
+                                    return;
+                                }
+                                echo "<ul class='nav navbar-nav' id='ddmenu'>";
+                                for($i = 0; $i < count($arr[$parent_id]) ;$i++){
+                                    echo "<li class='dropdown' id='ddmenu-".$parent_id."' ><a href='".$arr[$parent_id][$i]['language']."/".$arr[$parent_id][$i]['controller']."'>".$arr[$parent_id][$i]['page']."</a>";
+                                        view_menu($arr, $arr[$parent_id][$i]['id']);
+                                    echo "</li>\n";
+                                }
+                                echo "</ul>\n";
+                            }
+                            view_menu($params['mainmenu']);
+                        ?>
+                        <?php //$this->view_menu($params['mainmenu']); ?>
 
-                        <?php $this->view_menu($params['mainmenu']); ?>
-
-                        <ul class="nav navbar-nav">
+                        <!--<ul class="nav navbar-nav">
                             <li class="active"><a href="ru/index">О компании</a></li>
                             <li class="dropdown">
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="/customers">Клиентам <b class="caret"></b></a>
@@ -90,7 +98,7 @@
                             <li><a href="/useful">Полезное</a></li>
                             <li><a href="/news">Новости</a></li>
                             <li><a href="/partner">Партнерам</a></li>
-                        </ul>
+                        </ul>-->
                     </div>
                 </div>
             </div>

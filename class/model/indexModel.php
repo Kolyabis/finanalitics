@@ -1,27 +1,23 @@
 <?php
-class indexModel{
-    protected $_fr;
-    protected $_objView;
-	  protected $_dbQuery;
-	  protected $_params;
-	  protected $_lang;
-    protected $_getMenu;
-    protected $_getSession;
-    protected $_modLanguage;
+class indexModel extends defaultModel{
+    protected  $_params;
+    protected  $_lang;
+    protected $_getBody;
+    protected $_body;
+    protected $_db;
 
-    public function __construct($language){
-        //TODO: описать механизм СЕССИИ
-        $this->_getSession = new SessionSystemSetting();
-        $this->_dbQuery = new DbQuery();
-        $this->_getMenu = new ComMenu();
-        $this->_params = $this->_getMenu->getMenu($this->_dbQuery->select(array("id","page","parent_id","controller","language"), 'mainmenu', array("language"), array("$language"), 2));
-        $this->_modLanguage = new mod_language();
-        $this->_lang = $this->_modLanguage->langSwitch();
+    public function __construct($language, $option){
+        parent::__construct($language, $option);
+        $this->setModelBody($language);
     }
-    public function returnModelParams(){
-        return $this->_params;
+    protected function setModelBody($language){
+        $this->_db = DataBaseSetting::getInstance('mysql');
+        $sql = "SELECT c.* FROM category c, mainmenu m WHERE c.language = '$language' and m.language = '$language' and m.id_cat = c.id and c.status != 1";
+        $result = $this->_db->query($sql);
+        $this->_body = $result->fetchAll(PDO::FETCH_ASSOC);
     }
-    public function returnLangParams(){
-        return $this->_lang;
+
+    public function getModelBody(){
+        return $this->_body;
     }
 }

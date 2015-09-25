@@ -6,12 +6,13 @@
  * Date: 19.09.2015
  * Time: 1:08
  */
-require_once('/modules/feedback/PHPMailerAutoload.php');
+require_once('PHPMailerAutoload.php');
 class mod_feedback {
 	protected $_post;
+    private	$_mail;
 	//SEND MAIL SMTP
 	protected $_SMTP = array(
-			"host" => 'fin', // SMTP сервер пример(smtp.host.com)
+			"host" => 'finanalitics/', // SMTP сервер пример(smtp.host.com)
 			"debug" => 2, // Уровень логирования
 			"auth" => false, // Авторизация на сервере SMTP. Если ее нет - false
 			"port" => '25', // Порт SMTP сервера
@@ -22,32 +23,27 @@ class mod_feedback {
 			"mail_title" => 'Заголовок вашего письма!', // Заголовок письма
 			"mail_name" => 'Имя отправителя' // Имя отправителя
 	);
-	public function __construct($post){
-			$this->_post = $post;
-			$this->sendMail();
-	}
-	private function sendMail(){
-		try{
-			$mail = new PHPMailer(true); // Создаем экземпляр класса PHPMailer
 
-			$mail->IsSMTP(); // Указываем режим работы с SMTP сервером
-			$mail->Host       = $this->_SMTP['host'];  // Host SMTP сервера: ip или доменное имя
-			$mail->SMTPDebug  = $this->_SMTP['debug'];  // Уровень журнализации работы SMTP клиента PHPMailer
-			$mail->SMTPAuth   = $this->_SMTP['auth'];  // Наличие авторизации на SMTP сервере
-			$mail->Port       = $this->_SMTP['port'];  // Порт SMTP сервера
-			$mail->SMTPSecure = $this->_SMTP['secure'];  // Тип шифрования. Например ssl или tls
-			$mail->CharSet="UTF-8";  // Кодировка обмена сообщениями с SMTP сервером
-			$mail->Username   = $this->_SMTP['username'];  // Имя пользователя на SMTP сервере
-			$mail->Password   = $this->_SMTP['password'];  // Пароль от учетной записи на SMTP сервере
-			$mail->AddAddress('whoto@example.com', 'John Doe');  // Адресат почтового сообщения
-			$mail->AddReplyTo($this->_SMTP['addreply'], 'First Last');  // Альтернативный адрес для ответа
-			$mail->SetFrom($this->_SMTP['username'], $this->_SMTP['mail_title']);  // Адресант почтового сообщения
-			$mail->Subject = htmlspecialchars($this->_SMTP['mail_title']);  // Тема письма
-			$mail->MsgHTML('Текст сообщения!'); // Текст сообщения
-			$mail->Send();
-			return 1;
-		}catch (phpmailerException $e){
-			return $e->errorMessage();
-		}
+    public function __construct($post){
+        $this->_post = $post;
+        $this->sendMail();
+    }
+    private function sendMail(){
+        $this->_mail = new PHPMailer(true);
+        $this->_mail->IsSMTP();
+        $this->_mail->Host = $this->_SMTP['host'];
+        $this->_mail->SMTPAuth = $this->_SMTP['auth'];
+        $this->_mail->Port = $this->_SMTP['port'];
+        $this->_mail->SetFrom($this->_SMTP['username'], $this->_SMTP['mail_title']);
+        $this->_mail->CharSet = "UTF-8";
+        $this->_mail->AddAddress($this->_SMTP['username'], "Получатель");
+        $this->_mail->IsHTML(true);
+        $this->_mail->Subject = htmlspecialchars($this->_SMTP['mail_title']);  // Тема письма
+        $this->_mail->MsgHTML('Текст сообщения!'); // Текст сообщения
+        try{
+            $this->_mail->Send();
+        }catch (phpmailerException $e) {
+            return $e->errorMessage();
+        }
 	}
 }

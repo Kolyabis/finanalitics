@@ -1,3 +1,15 @@
+/**************** Метод обработки выпадающего меню **********************/
+$(document).ready(function(){
+    $('#ddmenu li').hover(function () {
+        clearTimeout($.data(this,'timer'));
+        $('ul',this).first().slideDown(200);
+    }, function () {
+        $.data(this,'timer', setTimeout($.proxy(function() {
+            $('ul',this).first().slideUp(200);
+        }, this), 100));
+    });
+});
+/*************************************************************************/
 /* **************************************** AVTO-START SLAYD-SHOW *****************************************************/
 $('.carousel').carousel({
     interval: 3000,
@@ -28,7 +40,7 @@ function switchLang(lang){
 }
 /* ********************************************************************************************************************/
 /* ***************************** Метод обработки и отправки данных обратной связи *************************************/
-function feedback(){
+function feedback(lang){
     var email = $('#email').val();
     var comment = $('#comment').val();
     var valid = true;
@@ -47,15 +59,23 @@ function feedback(){
     // отправляем AJAX запрос
     $.ajax({
         type: "POST",
-        url: "fin/index/mailsend",
-        data: "mail=" + email + "&comment=" + comment,
-        success: function(response){
+        url: "http://fin/"+lang+"/index/mail/",
+        dataType:"text",
+        data:{
+              mail:email,
+              comment:comment
+        }, success: function(response){
             if(response == ""){
-                alert("Сообщение отправлено!");
+                $('.alert-success').html("Сообщение отправлено!").slideDown();
+                setTimeout(function(){
+                    $('.alert-success').slideUp('slow')
+                }, 3000);
                 //location.reload();
             }else{
                 alert("Ошибка в запросе! Сервер вернул вот что: " + response);
             }
+        },error:function (xhr, ajaxOptions, thrownError){
+            alert(thrownError); //выводим ошибку
         }
     });
 }

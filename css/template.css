@@ -45,6 +45,7 @@ body{
 .navbar-default .navbar-nav > .active > a:focus {
     color: #DD2A1B;
     background-color: #fff;
+
 }
 .dropdown-submenu {
     position: relative;
@@ -167,10 +168,117 @@ body{
 .btn-default-content:hover{
     color: #C7C7C7;
 }
-/************************************************************************/
+/*********************************************************************************************************/
+/*********************************** Стили для выпадающего меню ******************************************/
+#hightMenu{
 
+}
+#ddmenu {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    cursor: pointer;
+    outline: none;
+    color: #8aa8bd;
+}
 
+/*#ddmenu  li { display: block; position: relative; float: left; color: #BFBFBF;}*/
+.navbar-nav  li { float: left; display: block;}
 
+.navbar-nav li a dropdown{
+    display: block;
+    float: left;
+    text-decoration: none;
+    color: #9F0002;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+}
+.navbar-nav li:hover > a { color: #9F0002; border-bottom: 1px solid #9F0002;}
+
+#ddmenu ul {
+    position: absolute;
+    width: 150px;
+    background: #fff;
+    display: none;
+    margin: 0;
+    list-style: none;
+    border-radius: 1px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* strela #ddmenu ul:after {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    bottom: 100%;
+    left: 8px;
+    border-width: 0 8px 8px 8px;
+    border-style: solid;
+    border-color: #fff transparent;
+}
+
+#ddmenu ul:before {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    bottom: 100%;
+    left: 4px;
+    border-width: 0 10px 10px 10px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.1) transparent;
+}*/
+
+.navbar-nav ul li {
+    display: block;
+    width: 100%;
+    font-size: 0.9em;
+    text-shadow: 1px 1px 0 #fff;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+
+}
+
+.navbar-nav ul li a {
+    display: block;
+    width: 100%;
+    padding: 5px;
+    line-height: 1.4em;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+}
+#ddmenu ul li ul {
+    position: absolute;
+    width: 100%;
+    background: #fff;
+    display: none;
+    margin: -29px 0px 0px 149px;
+    list-style: none;
+    border-radius: 3px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+#ddmenu ul li li {
+    display: block;
+    width: 100%;
+    font-size: 0.9em;
+    text-shadow: 1px 1px 0 #fff;
+}
+
+#ddmenu ul li li a {
+    display: block;
+    width: 100%;
+    padding: 6px;
+    line-height: 1.4em;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+}
+/*********************************** Стили для выпадающего меню ******************************************/
 
 
 

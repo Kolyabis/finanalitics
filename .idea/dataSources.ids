@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - fin@localhost" uuid="3dc36fd5-7860-4eee-970b-041bff6203d2">
+    <database-info product="MySQL" version="5.5.25" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="fin"/>
+    <table name="articles" schema="" catalog="fin" type="TABLE">
+      <column name="id" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" autoIncrement="true"/>
+      <column name="name" sqlType="CHAR" precision="50" scale="0" nullable="false" jdbcType="1"/>
+      <column name="meta_description" sqlType="VARCHAR" precision="500" scale="0" nullable="false" jdbcType="12"/>
+      <column name="meta_key" sqlType="CHAR" precision="255" scale="0" nullable="false" jdbcType="1"/>
+      <column name="mini_description" sqlType="VARCHAR" precision="500" scale="0" nullable="false" jdbcType="12"/>
+      <column name="description" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="status" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="id_cat" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
+      <column name="language" sqlType="CHAR" precision="2" scale="0" nullable="false" jdbcType="1"/>
+      <column name="user_id" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
+      <column name="data" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="category" schema="" catalog="fin" type="TABLE">
+      <column name="id" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" autoIncrement="true"/>
+      <column name="name_cat" sqlType="CHAR" precision="50" scale="0" nullable="false" jdbcType="1"/>
+      <column name="meta_description" sqlType="VARCHAR" precision="500" scale="0" nullable="false" jdbcType="12"/>
+      <column name="meta_key" sqlType="CHAR" precision="255" scale="0" nullable="false" jdbcType="1"/>
+      <column name="mini_description" sqlType="VARCHAR" precision="500" scale="0" nullable="false" jdbcType="12"/>
+      <column name="description" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="status" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
+      <column name="language" sqlType="CHAR" precision="2" scale="0" nullable="false" jdbcType="1"/>
+      <column name="parent_id" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
+      <column name="data" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="mainmenu" schema="" catalog="fin" type="TABLE">
+      <column name="id" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" autoIncrement="true"/>
+      <column name="page" sqlType="CHAR" precision="20" scale="0" nullable="false" jdbcType="1"/>
+      <column name="alias" sqlType="CHAR" precision="30" scale="0" nullable="false" jdbcType="1"/>
+      <column name="parent_id" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
+      <column name="controller" sqlType="CHAR" precision="20" scale="0" nullable="false" jdbcType="1"/>
+      <column name="id_cat" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
+      <column name="status" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="language" sqlType="CHAR" precision="2" scale="0" nullable="false" jdbcType="1"/>
+      <column name="data" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="users" schema="" catalog="fin" type="TABLE">
+      <column name="id" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" autoIncrement="true"/>
+      <column name="firstName" sqlType="CHAR" precision="30" scale="0" nullable="false" jdbcType="1"/>
+      <column name="lastName" sqlType="CHAR" precision="30" scale="0" nullable="false" jdbcType="1"/>
+      <column name="login" sqlType="CHAR" precision="15" scale="0" nullable="false" jdbcType="1"/>
+      <column name="pass" sqlType="CHAR" precision="20" scale="0" nullable="false" jdbcType="1"/>
+      <column name="mail" sqlType="CHAR" precision="20" scale="0" nullable="false" jdbcType="1"/>
+      <column name="tel" sqlType="VARCHAR" precision="10" scale="0" nullable="false" jdbcType="12"/>
+      <column name="status" sqlType="CHAR" precision="10" scale="0" nullable="false" jdbcType="1" def="J3VzZXIn"/>
+      <column name="role" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="data" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+  </data-source>
+</component>
