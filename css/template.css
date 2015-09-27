@@ -26,20 +26,20 @@ body{
     border-color: #fff;
 }
 /* Цвет пунктов навигационного меню */
-.navbar-default .navbar-nav > li > a {
+/*.navbar-default .navbar-nav > li > a {
     color: #000;
 }
-/* Цвет пункта меню, при поднесении к нему курсора мышки или при его нахождении в фокусе */
+/!* Цвет пункта меню, при поднесении к нему курсора мышки или при его нахождении в фокусе *!/
 .navbar-default .navbar-nav  > li > a:hover,
 .navbar-default .navbar-nav  > li > a:focus {
     color: #DD2A1B;
 }
-/* Цвет выпадающего меню */
+/!* Цвет выпадающего меню *!/
 .dropdown-menu > li > a:hover,
 .dropdown-menu > li > a:focus {
     color: #DD2A1B;
 }
-/* Цвет активного пункта меню */
+/!* Цвет активного пункта меню *!/
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
@@ -93,7 +93,7 @@ body{
     -webkit-border-radius: 6px 0 6px 6px;
     -moz-border-radius: 6px 0 6px 6px;
     border-radius: 6px 0 6px 6px;
-}
+}*/
 
 
 
@@ -131,7 +131,7 @@ body{
     left: 15%;
     z-index: 10;
     padding-top: 20px;
-    padding-bottom: 100px;
+    padding-bottom: 45px;
     color: #fff;
     text-align: right;
     text-shadow: 0 0px 0px rgba(0, 0, 0, .6);
@@ -143,7 +143,7 @@ body{
     margin: 1px;
     text-indent: -999px;
     cursor: pointer;
-    background-color: #000 \9;
+    background-color: #000 ;
     background-color: rgb(182, 50, 50);
     border: 1px solid #B11E20;
     border-radius: 10px;
@@ -170,115 +170,77 @@ body{
 }
 /*********************************************************************************************************/
 /*********************************** Стили для выпадающего меню ******************************************/
-#hightMenu{
 
-}
-#ddmenu {
-    display: block;
-    width: 100%;
-    margin: 0 auto;
-    cursor: pointer;
-    outline: none;
-    color: #8aa8bd;
+.example {
+    position: relative;
+    height:300px;
 }
 
-/*#ddmenu  li { display: block; position: relative; float: left; color: #BFBFBF;}*/
-.navbar-nav  li { float: left; display: block;}
-
-.navbar-nav li a dropdown{
-    display: block;
-    float: left;
-    text-decoration: none;
-    color: #9F0002;
-    -webkit-transition: all 0.2s linear;
-    -moz-transition: all 0.2s linear;
-    -o-transition: all 0.2s linear;
-    transition: all 0.2s linear;
+/* Стили меню */
+#nav {
+    display:inline-block;
+    width:100%;
+    margin:0px auto;
+    padding:0;
 }
-.navbar-nav li:hover > a { color: #9F0002; border-bottom: 1px solid #9F0002;}
-
-#ddmenu ul {
-    position: absolute;
-    width: 150px;
-    background: #fff;
-    display: none;
-    margin: 0;
-    list-style: none;
-    border-radius: 1px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+#nav li {
+    float:left;
+    position:relative;
+    list-style:none;
 }
-
-/* strela #ddmenu ul:after {
-    content: "";
-    width: 0;
-    height: 0;
-    position: absolute;
-    bottom: 100%;
-    left: 8px;
-    border-width: 0 8px 8px 8px;
-    border-style: solid;
-    border-color: #fff transparent;
+#nav a {
+    color:#000;
+    text-decoration:none;
+    display:block;
+    padding:8px 20px;
 }
-
-#ddmenu ul:before {
-    content: "";
-    width: 0;
-    height: 0;
-    position: absolute;
-    bottom: 100%;
-    left: 4px;
-    border-width: 0 10px 10px 10px;
-    border-style: solid;
-    border-color: rgba(0, 0, 0, 0.1) transparent;
-}*/
-
-.navbar-nav ul li {
-    display: block;
-    width: 100%;
-    font-size: 0.9em;
-    text-shadow: 1px 1px 0 #fff;
-    border: 1px solid rgba(0, 0, 0, 0.15);
-
+/* sВыбранный пункт меню */
+#nav .current a, #nav li:hover > a {
+    color:#DD2A1B;
+    box-shadow:0 1px 0px #DD2A1B; /*немного css3*/
+    -moz-box-shadow:0 1px 0px #DD2A1B;
+    -webkit-box-shadow:0 1px 0px #DD2A1B;
 }
-
-.navbar-nav ul li a {
-    display: block;
-    width: 100%;
-    padding: 5px;
-    line-height: 1.4em;
-    -webkit-transition: all 0.2s linear;
-    -moz-transition: all 0.2s linear;
-    -o-transition: all 0.2s linear;
-    transition: all 0.2s linear;
+/* Подуровень */
+#nav ul li:hover a, #nav li:hover li a {
+    background:none;
+    border:none;
+    color:#000;
 }
-#ddmenu ul li ul {
-    position: absolute;
-    width: 100%;
-    background: #fff;
-    display: none;
-    margin: -29px 0px 0px 149px;
-    list-style: none;
-    border-radius: 3px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+#nav ul li a:hover {
+    color:#DD2A1B;
 }
-#ddmenu ul li li {
-    display: block;
-    width: 100%;
-    font-size: 0.9em;
-    text-shadow: 1px 1px 0 #fff;
+/* выпадающий список */
+#nav li:hover > ul {
+    opacity:1;
+    visibility:visible;
 }
-
-#ddmenu ul li li a {
-    display: block;
-    width: 100%;
-    padding: 6px;
-    line-height: 1.4em;
-    -webkit-transition: all 0.2s linear;
-    -moz-transition: all 0.2s linear;
-    -o-transition: all 0.2s linear;
-    transition: all 0.2s linear;
+#nav ul {
+    opacity:0;
+    visibility:hidden;
+    padding:0;
+    width:175px;
+    position:absolute;
+    margin-left: -60px;
+    background:#fff;
+    box-shadow:0 1px 0px rgba(0,0,0, .5);
+    -moz-box-shadow:0 1px 0px rgba(0,0,0, .5);
+    -webkit-box-shadow:0 1px 0px rgba(0,0,0, .5);
+    -moz-transition:opacity .25s linear, visibility .1s linear .1s;
+    -webkit-transition:opacity .25s linear, visibility .1s linear .1s;
+    -o-transition:opacity .25s linear, visibility .1s linear .1s;
+    transition:opacity .25s linear, visibility .1s linear .1s;
 }
-/*********************************** Стили для выпадающего меню ******************************************/
-
-
+#nav ul li {
+    float:none;
+    margin:0;
+}
+#nav ul a {
+    font-weight:normal;
+    text-shadow:0 2px 2px rgba(255,255,255, 0.7);
+}
+#nav ul ul {
+    left:236px;
+    top:0px;
+}
 

@@ -19,7 +19,7 @@ $('.carousel').carousel({
 /* ********************************************************************************************************************/
 /* ************************************ Метод перегрузки страницы под язык ********************************************/
 function switchLang(lang){
-    var arrLang = location.href.split('/')
+    var arrLang = location.href.split('/');
     var strUri = location.href;
     var newUrl;
     var checkLang = arrLang[3];
@@ -27,12 +27,6 @@ function switchLang(lang){
         //TODO: доработать алгаритм. Нужно вставлять значение языка по умолчанию в УРЛ
         newUrl = strUri.replace(new RegExp(checkLang,'g'), lang);
         window.location = newUrl;
-        /*if(checkLang != 'ru' || checkLang != 'en' || checkLang != 'ua'){
-
-        }else{
-            newUrl = strUri.replace(new RegExp(checkLang,'g'), lang);
-            window.location = newUrl;
-        }*/
     }else{
         newUrl = strUri+lang+'/';
         window.location = newUrl;

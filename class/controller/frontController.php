@@ -31,7 +31,7 @@ class frontController implements iController {
 
     protected function __construct() {
         $this->parseUri();
-        $this->setLanguage();
+        $this->getLanguage();
         $this->setControllerString();
         $this->setActionString();
         $this->setParamsArray();
@@ -58,7 +58,7 @@ class frontController implements iController {
         $this->_uri = explode ('/', $request);
     }
     //TODO: врубаю код тапором, чтоб заработало, потом поменяем
-    public function setLanguage(){
+    public function getLanguage(){
         if(!empty($this->_uri[0]) && $this->_uri[0] == 'ru' || $this->_uri[0] == 'en' || $this->_uri[0] == 'ua'){
             return $this->_language = $this->_uri[0];
         }else{
@@ -106,9 +106,6 @@ class frontController implements iController {
         }
     }
 
-    public function getLanguage(){
-        return $this->_language;
-    }
     public function getParams() {
         return $this->_params;
     }

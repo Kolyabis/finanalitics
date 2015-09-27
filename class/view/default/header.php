@@ -49,21 +49,35 @@
                             <span class="icon-bar"></span>
                         </button>
                     </div>
-                    <div class="collapse navbar-collapse" id="responsive-menu">
+                    <!--<div class="collapse navbar-collapse" id="responsive-menu">-->
+                    <div class="example" style="margin-bottom: -250px; z-index: 10;">
                         <?php
-                            function view_menu($arr, $parent_id = 0){
+                        function view_menu($arr, $parent_id = 0){
+                            if(empty($arr[$parent_id])){
+                                return;
+                            }
+                            echo "<ul id='nav'>";
+                            for($i = 0; $i < count($arr[$parent_id]) ;$i++){
+                                echo "<li  ><a href='http://fin/".$arr[$parent_id][$i]['language']."/".$arr[$parent_id][$i]['controller']."'>".$arr[$parent_id][$i]['page']."</a>";
+                                view_menu($arr, $arr[$parent_id][$i]['id']);
+                                echo "</li>\n";
+                            }
+                            echo "</ul>\n";
+                        }
+                        view_menu($params['mainmenu']);
+                            /*function view_menu($arr, $parent_id = 0){
                                 if(empty($arr[$parent_id])){
                                     return;
                                 }
                                 echo "<ul class='nav navbar-nav' id='ddmenu'>";
                                 for($i = 0; $i < count($arr[$parent_id]) ;$i++){
-                                    echo "<li class='dropdown' id='ddmenu-".$parent_id."' ><a href='".$arr[$parent_id][$i]['language']."/".$arr[$parent_id][$i]['controller']."'>".$arr[$parent_id][$i]['page']."</a>";
+                                    echo "<li class='dropdown' id='ddmenu-".$parent_id."' ><a href='http://fin/".$arr[$parent_id][$i]['language']."/".$arr[$parent_id][$i]['controller']."'>".$arr[$parent_id][$i]['page']."</a>";
                                         view_menu($arr, $arr[$parent_id][$i]['id']);
                                     echo "</li>\n";
                                 }
                                 echo "</ul>\n";
                             }
-                            view_menu($params['mainmenu']);
+                            view_menu($params['mainmenu']);*/
                         ?>
                         <?php //$this->view_menu($params['mainmenu']); ?>
 
